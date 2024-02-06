@@ -1,0 +1,34 @@
+What is a UART ?
+
+Universal Asynchronous Receiver/Transmitter
+Very commom & simple to use!
+
+Asynchronous means not clocked - no clock in the interface.
+
+Device       FPGA
+Tx Data --- Rx Data
+Rx Data --- Tx Data
+
+This is just an example for a possible implemntion of a UART box between a devicde and fpga. there is not a must need for both data lines, it all depdends about the deisred implemention.
+
+The UART is a full duplex interface - which mean you can send and receive at both time.
+
+UART Configuration Parameters
+1. Since there is no clock, the reciever and the transmitter needs to agree about the baud rate(bits per second)/frequency of sending bits.
+If they don't agree - the data is not valid.
+2. Number of data bits is 8.
+3. Parity bit which can be on/off. it is useful if you want to check the data.
+4. Stop bit. 1 is used as a stop bit.
+The start bit indicates data is complete, stay/return to high.
+4. Start bit. 0 is used as a start bit.
+The start bit indicates data is coming, transition from high to low
+
+UART Data Stream Example
+
+-----_____ ------   _____  -----   -----   _____   -----    ____   -----  -----
+     start| bit0 || bit1 || bit2 || bit3 || bit4 || bit5 || bit6 || bit7 |stop
+
+ 1. LOOK FOR FALLING EDGE OF START BIT
+ 2. SAMPLE MIDDLE OF DATA BITS BASED ON THE BAUD RATE
+
+
