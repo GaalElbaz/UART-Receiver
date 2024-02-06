@@ -1,4 +1,4 @@
-What is a UART ?
+## What is a UART ?
 
 Universal Asynchronous Receiver/Transmitter
 Very commom & simple to use!
